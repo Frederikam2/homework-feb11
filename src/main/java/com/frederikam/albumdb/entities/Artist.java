@@ -10,7 +10,7 @@ public class Artist {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @Column(name = "artist_id", nullable = false)
     private int id;
 
     @Column(name = "title")
@@ -41,5 +41,14 @@ public class Artist {
 
     public void setYear(short year) {
         this.year = year;
+    }
+
+    @Override
+    public String toString() {
+        return "Artist{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", year=" + year +
+                '}';
     }
 }

@@ -9,7 +9,7 @@ public class Album {
     public Album() {}
 
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @Column(name = "album_id", nullable = false)
     private int id;
 
     @Column(name = "year")
@@ -19,11 +19,11 @@ public class Album {
     private String title;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "artist_id")
     private Artist artist;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "production_id")
     private ProductionInfo production;
 
     public int getId() {
@@ -64,5 +64,16 @@ public class Album {
 
     public void setProduction(ProductionInfo production) {
         this.production = production;
+    }
+
+    @Override
+    public String toString() {
+        return "Album{" +
+                "id=" + id +
+                ", year=" + year +
+                ", title='" + title + '\'' +
+                ", artist=" + artist +
+                ", production=" + production +
+                '}';
     }
 }

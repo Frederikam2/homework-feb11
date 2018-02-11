@@ -10,7 +10,7 @@ public class ProductionInfo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", nullable = false)
+    @Column(name = "production_id", nullable = false)
     private int id;
 
     @Column(name = "producer")
@@ -41,5 +41,14 @@ public class ProductionInfo {
 
     public void setLabel(String label) {
         this.label = label;
+    }
+
+    @Override
+    public String toString() {
+        return "ProductionInfo{" +
+                "id=" + id +
+                ", producer='" + producer + '\'' +
+                ", label='" + label + '\'' +
+                '}';
     }
 }
