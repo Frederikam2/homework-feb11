@@ -15,7 +15,7 @@ public class DbManager {
     DbManager(File config) throws IOException {
         Properties props = new Properties();
         props.load(new FileInputStream(config));
-        connection = new DatabaseConnection.Builder("albumdb", props.getProperty("jdbcUrl"))
+        connection = new DatabaseConnection.Builder("main", props.getProperty("jdbcUrl"))
                 .addEntityPackage("com.frederikam.albumdb.entities")
                 .setAppName("DbManager")
                 .build();
